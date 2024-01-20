@@ -1,14 +1,14 @@
 
-name: fishpush-api
+name: firepush-api
 
-image: emmachang00000/fishpush-api
+image: emmachang00000/firepush-api
 
 service:
-  - name: fishpush-api
+  - name: firepush-api
     httpTargetPort: 12345
 
 ingressroute:
   - certResolver: cf
-    name: fishpush-api
-    domain: fishpush-api.emmatest.online
-    service: fishpush-api
+    name: firepush-api
+    domain: firepush-api.emmatest.online
+    service: firepush-api
