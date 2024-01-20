@@ -1,0 +1,14 @@
+
+name: fishpush-api
+
+image: emmachang00000/fishpush-api
+
+service:
+  - name: fishpush-api
+    httpTargetPort: 12345
+
+ingressroute:
+  - certResolver: cf
+    name: fishpush-api
+    domain: fishpush-api.emmatest.online
+    service: fishpush-api
