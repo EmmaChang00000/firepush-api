@@ -16,7 +16,13 @@ spec:
       containers:
       - env:
         - name: Revision
-          value: "{{ .Release.Revision }}"
-        {{ .Values.env }}
+          value: "{{ .Release.Revision }}"      
+        {{- range .Values.envSecret }}
+        - name: {{ .name }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ .secretName }}
+              key: {{ .secretKey }}
+        {{- end }}
         name: {{ .Values.name }}
         image: {{ .Values.image }}
