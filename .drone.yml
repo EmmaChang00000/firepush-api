@@ -8,6 +8,11 @@ steps:
     settings:
       dockerfile: deployment/Dockerfile
       repo: emmachang00000/firepush-api
+      environment:
+        FCM_PUBLIC: 
+          from_secret: fcm_public
+        FCM_PRIVATE:
+          from_secret: fcm_private
       tags: 
         - latest
       username: 
