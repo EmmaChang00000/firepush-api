@@ -17,5 +17,6 @@ spec:
       - env:
         - name: Revision
           value: "{{ .Release.Revision }}"
+        {{ .Values.env }}
         name: {{ .Values.name }}
         image: {{ .Values.image }}

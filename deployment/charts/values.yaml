@@ -12,3 +12,15 @@ ingressroute:
     name: firepush-api
     domain: firepush-api.emmatest.online
     service: firepush-api
+
+env:
+  - name: FCM_PUBLIC
+    valueFrom:
+      secretKeyRef:
+        name: fcm-pair
+        key: public
+  - name: FCM_PRIVATE
+    valueFrom:
+      secretKeyRef:
+        name: fcm-pair
+        key: private
