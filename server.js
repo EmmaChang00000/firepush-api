@@ -11,8 +11,8 @@ const users = [];
 app.use(cors());
 app.use(bodyParser.json());
 
-const publicVapidKey = process.env.FCM_PUBLIC || '';
-const privateVapidKey =  process.env.FCM_PRIVATE || '';
+const publicVapidKey = 'BJD7XKX8M2cXsZd7tNwR98X0z5TKGVeHg0J8HLlwRfxSw8dqoifUOm00EbtZYCSJxNIQ89fYYj83Rbpfy7TYvH8' || '';
+const privateVapidKey =  'm4mWs-h8fDZDTeiwoGKObFOlQ64PxRiyNhm61Q91hEk' || '';
 
 webPush.setVapidDetails(
   "mailto:test@example.com",
@@ -101,7 +101,7 @@ app.post("/api/push", (req, res) => {
             return "success";
           })
           .catch((error) => {
-            return `${receiveMessage.id}`;
+            return `${receive.id}`;
           })
       ),
       toArray()
